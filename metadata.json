@@ -1,0 +1,5 @@
+{
+  "name": "Teacher Galyxia Lesson Plan Generator",
+  "description": "Automatically generates lesson plans for Grades 1-10 in DepEd MATATAG format based on user inputs. Helps teachers create structured lesson plans quickly and efficiently.",
+  "requestFramePermissions": []
+}
