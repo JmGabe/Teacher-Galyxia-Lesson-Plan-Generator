@@ -14,15 +14,15 @@ const LessonPlanDisplay: React.FC<LessonPlanDisplayProps> = ({ lessonPlan }) => 
     if (!content) return null;
     return (
       <div className="mb-3">
-        <h3 className="font-semibold text-lg text-gray-800">{title}</h3>
+        <h3 className="font-semibold text-lg text-gray-200">{title}</h3>
         {Array.isArray(content) ? (
-          <ul className="list-disc pl-5 text-gray-700">
+          <ul className="list-disc pl-5 text-gray-300">
             {content.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
         ) : (
-          <p className="text-gray-700 whitespace-pre-wrap">{content}</p>
+          <p className="text-gray-300 whitespace-pre-wrap">{content}</p>
         )}
       </div>
     );
@@ -32,39 +32,39 @@ const LessonPlanDisplay: React.FC<LessonPlanDisplayProps> = ({ lessonPlan }) => 
     if (!content) return null;
     return (
       <div className="mb-2 ml-4">
-        <h4 className="font-medium text-md text-gray-800">{title}</h4>
+        <h4 className="font-medium text-md text-gray-300">{title}</h4>
         {Array.isArray(content) ? (
-          <ul className="list-disc pl-5 text-gray-700">
+          <ul className="list-disc pl-5 text-gray-400">
             {content.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
         ) : (
-          <p className="text-gray-700 whitespace-pre-wrap">{content}</p>
+          <p className="text-gray-400 whitespace-pre-wrap">{content}</p>
         )}
       </div>
     );
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-xl border border-indigo-200 mt-8 text-left max-w-4xl mx-auto">
-      <h2 className="text-2xl font-extrabold text-indigo-700 mb-6 text-center">Generated Lesson Plan</h2>
+    <div className="bg-gray-800 p-6 rounded-lg shadow-xl border border-indigo-600 mt-8 text-left max-w-4xl mx-auto">
+      <h2 className="text-2xl font-extrabold text-indigo-400 mb-6 text-center">Generated Lesson Plan</h2>
 
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-3">I. OBJECTIVE/S</h2>
+        <h2 className="text-xl font-bold text-gray-100 mb-3">I. OBJECTIVE/S</h2>
         {renderSubSection('A. Content Standards', lessonPlan.objectives.contentStandards)}
         {renderSubSection('B. Performance Standards', lessonPlan.objectives.performanceStandards)}
         {renderSubSection('C. Learning Competencies/Objectives', lessonPlan.objectives.learningCompetencies)}
       </div>
 
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-3">II. CONTENT / TOPIC</h2>
-        <p className="text-gray-700 whitespace-pre-wrap">{lessonPlan.contentTopic}</p>
+        <h2 className="text-xl font-bold text-gray-100 mb-3">II. CONTENT / TOPIC</h2>
+        <p className="text-gray-300 whitespace-pre-wrap">{lessonPlan.contentTopic}</p>
       </div>
 
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-3">III. LEARNING RESOURCES</h2>
-        <h3 className="font-semibold text-lg text-gray-800 ml-4">A. References</h3>
+        <h2 className="text-xl font-bold text-gray-100 mb-3">III. LEARNING RESOURCES</h2>
+        <h3 className="font-semibold text-lg text-gray-200 ml-4">A. References</h3>
         {renderSubSection('1. Teacher’s Guide pages', lessonPlan.learningResources.references.teachersGuidePages)}
         {renderSubSection('2. Learner’s Materials pages', lessonPlan.learningResources.references.learnersMaterialsPages)}
         {renderSubSection('3. Textbook pages', lessonPlan.learningResources.references.textbookPages)}
@@ -73,7 +73,7 @@ const LessonPlanDisplay: React.FC<LessonPlanDisplayProps> = ({ lessonPlan }) => 
       </div>
 
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-3">IV. PROCEDURES</h2>
+        <h2 className="text-xl font-bold text-gray-100 mb-3">IV. PROCEDURES</h2>
         {renderSubSection('A. Reviewing previous lesson or presenting the new lesson', lessonPlan.procedures.reviewingPreviousLesson)}
         {renderSubSection('B. Establishing a purpose for the lesson', lessonPlan.procedures.establishingPurpose)}
         {renderSubSection('C. Presenting examples/ instances of the new lesson', lessonPlan.procedures.presentingExamples)}

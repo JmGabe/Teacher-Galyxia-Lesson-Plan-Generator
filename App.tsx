@@ -162,14 +162,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-indigo-200 flex flex-col items-center p-4">
-      <div className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-4xl text-center border-b-4 border-indigo-500 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-indigo-800 mb-2 drop-shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-950 flex flex-col items-center p-4">
+      <div className="bg-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-4xl text-center border-b-4 border-indigo-600 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-indigo-400 mb-2 drop-shadow-lg">
           Teacher Galyxia Lesson Plan Generator
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-600 italic mb-6">“Sa Naawan! We Are One!”</p>
+        <p className="text-xl sm:text-2xl text-gray-400 italic mb-6">“Sa Naawan! We Are One!”</p>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 border rounded-lg bg-gray-50 shadow-inner">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 border rounded-lg bg-gray-700 shadow-inner border-gray-600">
           <Select
             label="Grade Level"
             id="gradeLevel"
@@ -248,7 +248,7 @@ const App: React.FC = () => {
 
         {error && (
           <div
-            className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-6 animate-pulse"
+            className="bg-red-800 border border-red-600 text-red-200 px-4 py-3 rounded relative mt-6 animate-pulse"
             role="alert"
           >
             <strong className="font-bold">Error: </strong>
@@ -259,7 +259,7 @@ const App: React.FC = () => {
         {lessonPlan && !loading && (
           <>
             <LessonPlanDisplay lessonPlan={lessonPlan} />
-            <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center sticky bottom-4 z-10 bg-white p-4 rounded-lg shadow-lg border border-indigo-200">
+            <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center sticky bottom-4 z-10 bg-gray-800 p-4 rounded-lg shadow-lg border border-indigo-600">
               <Button onClick={() => handleDownload('word')} variant="outline">
                 Download as DOCX (Mock)
               </Button>

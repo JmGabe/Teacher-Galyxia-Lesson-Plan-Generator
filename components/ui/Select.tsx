@@ -6,17 +6,20 @@ interface SelectProps<T> extends React.SelectHTMLAttributes<HTMLSelectElement> {
   value: T;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   // Add 'id' explicitly as a prop for the Select component
-  id: string; 
+  id: string;
+  // Add required and disabled props to the interface
+  required?: boolean;
+  disabled?: boolean;
 }
 
 const Select = <T extends string | number | readonly string[]>(
-  // Destructure 'id' from props
-  { label, options, value, onChange, id, ...props }: SelectProps<T>
+  // Destructure 'id', 'required', and 'disabled' from props
+  { label, options, value, onChange, id, required, disabled, ...props }: SelectProps<T>
 ): React.JSX.Element => {
   return (
     <div className="mb-4">
       {/* Use the destructured 'id' for htmlFor */}
-      <label htmlFor={id} className="block text-gray-700 text-sm font-bold mb-2">
+      <label htmlFor={id} className="block text-gray-300 text-sm font-bold mb-2">
         {label}
       </label>
       <select
@@ -24,7 +27,9 @@ const Select = <T extends string | number | readonly string[]>(
         id={id}
         value={value}
         onChange={onChange}
-        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white text-gray-900"
+        className="block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-gray-700 text-gray-100"
+        required={required} // Pass the required prop
+        disabled={disabled} // Pass the disabled prop
         {...props}
       >
         <option value="" disabled>

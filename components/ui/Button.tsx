@@ -30,7 +30,8 @@ const Button: React.FC<ButtonProps> = ({
       variantStyles = 'bg-red-500 hover:bg-red-600 text-white';
       break;
     case 'outline':
-      variantStyles = 'bg-transparent border border-indigo-500 text-indigo-500 hover:bg-indigo-50 hover:text-indigo-600';
+      // Adjusted for dark theme
+      variantStyles = 'bg-transparent border border-indigo-400 text-indigo-400 hover:bg-indigo-800 hover:text-white';
       break;
   }
 
